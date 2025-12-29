@@ -1,0 +1,19 @@
+pipeline {
+    agent {label "Agent-node1"}
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello bhai logo'
+            }
+        }
+        stage('Hello-2') {
+            steps {
+                sh '''
+                    echo "Hello, Jenkins Pipeline!" > example.txt
+                    echo "File created successfully."
+                    '''
+                }
+        }
+    }
+}
