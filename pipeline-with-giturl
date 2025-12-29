@@ -1,0 +1,28 @@
+pipeline{
+    agent { label 'Agent-node1'}  
+    stages{
+        stage("Code"){
+            steps{
+                echo "test code to clone git repository"
+                git branch: 'main', url: "https://github.com/braj-mohan/django-notes-app.git"
+                echo "code successfully cloned"
+                       }
+        }
+        stage("Build"){
+            steps{
+            	echo "build success"
+            }
+        }
+        stage("test"){
+            steps{
+		echo "test success"
+            }
+        }
+        stage("Deploy"){
+            steps{
+                echo "deploy success"
+            }
+        }
+       
+    }
+}
